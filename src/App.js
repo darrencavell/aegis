@@ -66,6 +66,7 @@ const App = () => {
       if(currency) {
         fetchNewMoneyApi({ symbol: currency })
         setModalVisibility(false)
+        setCurrency('-')
       }
     }
     return (

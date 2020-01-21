@@ -57,7 +57,9 @@ class MoneyStore extends EventEmitter {
       modifiedMoney[key] = value
     }
     this.data.money = modifiedMoney
+    this.data.symbol.push(currency)
     this.emit('money')
+    this.emit('symbol')
   }
 
   getBase() { return this.data.base }
