@@ -1,15 +1,11 @@
-### STAGE 1: Build ###
-FROM node:9.11.1 as build
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
-COPY package.json /usr/src/app/package.json
-RUN npm install --silent
-COPY . /usr/src/app
+FROM mhart/alpine-node:11 AS builder
+WORKDIR /app
+COPY . .
+RUN npm install
 RUN npm run build
 
-### STAGE 2: Production Environment ###
-FROM nginx:1.13.12-alpine
-COPY --from=build /usr/src/app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM mhart/alpine-node
+RUN yarn global add serve
+WORKDIR /app
+COPY --from=builder /app/build .
+CMD ["serve", "-p", "80", "-s", "."]

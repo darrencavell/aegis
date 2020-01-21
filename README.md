@@ -20,6 +20,12 @@ created with webpack configuration, cache network first, mobile oriented, and fl
 
 > Using npm: `$ npm run test:watch`
 
+## Docker
+
+> `$ docker build -t aegis .`
+
+> `$ docker run -it -p 8080:80 aegis`
+
 Deployed Site: https://aegis-exchange.netlify.com
 
 Github: https://github.com/darrencavell/aegis
