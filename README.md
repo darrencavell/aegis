@@ -19,3 +19,7 @@ created with webpack configuration, cache network first, mobile oriented, and fl
 > Using yarn: `$ yarn test:watch`
 
 > Using npm: `$ npm run test:watch`
+
+Deployed Site: https://aegis-exchange.netlify.com
+
+Github: https://github.com/darrencavell/aegis
