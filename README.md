@@ -2,6 +2,8 @@
 
 created with webpack configuration, cache network first, mobile oriented, and flux as the state management
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/06fac6ae-168f-46a0-9fbb-159ce38f8f2b/deploy-status)](https://app.netlify.com/sites/aegis-exchange/deploys)
+
 ## Features
 - cache responses from server
 - webpack configuration
